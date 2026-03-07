@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://cp5jj73ggepnp"]
+
+[ext_resource type="PackedScene" uid="uid://wgqprgx3ntjm" path="res://scenes/ui/menu_button.tscn" id="1_6tw0m"]
+[ext_resource type="Script" uid="uid://cqlhpvuo4ta6a" path="res://scripts/ui/pause_menu.gd" id="1_f6eus"]
+[ext_resource type="FontFile" uid="uid://ch5v3o24b7jh2" path="res://assets/fonts/PixelOperator8.ttf" id="2_0lmf7"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=730341835]
+process_mode = 3
+script = ExtResource("1_f6eus")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1618656024]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1456101509]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -156.875
+offset_top = -187.5
+offset_right = 156.875
+offset_bottom = 187.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 9
+
+[node name="Resume" parent="VBoxContainer" unique_id=348237539 instance=ExtResource("1_6tw0m")]
+layout_mode = 2
+text = "Resume"
+
+[node name="Replay" parent="VBoxContainer" unique_id=725820074 instance=ExtResource("1_6tw0m")]
+layout_mode = 2
+text = "Replay"
+
+[node name="Levels" parent="VBoxContainer" unique_id=2084127334 instance=ExtResource("1_6tw0m")]
+layout_mode = 2
+text = "Levels
+"
+
+[node name="Options" parent="VBoxContainer" unique_id=1171426251 instance=ExtResource("1_6tw0m")]
+layout_mode = 2
+text = "Options"
+
+[node name="Quit" parent="VBoxContainer" unique_id=2137839157 instance=ExtResource("1_6tw0m")]
+layout_mode = 2
+text = "Quit"
+
+[node name="options_label" type="Label" parent="." unique_id=1356279643]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -433.5
+offset_top = -256.0
+offset_right = 433.5
+offset_bottom = -219.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0.96862745, 0.6666667, 0.1882353, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("2_0lmf7")
+theme_override_font_sizes/font_size = 30
+text = "y a pas d'options poto rend pas fou"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/Replay" to="." method="_on_replay_pressed"]
+[connection signal="pressed" from="VBoxContainer/Levels" to="." method="_on_levels_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

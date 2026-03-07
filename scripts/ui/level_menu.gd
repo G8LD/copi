@@ -1,6 +1,6 @@
 extends Control
 
-const LEVEL_BUTTON = preload("res://scenes/level_button.tscn")
+const LEVEL_BUTTON = preload("res://scenes/ui/level_button.tscn")
 
 @onready var grid_container: GridContainer = $GridContainer
 
@@ -25,3 +25,7 @@ func init_level_buttons():
 		nb_levels+=1
 
 		file_name = dir.get_next()
+
+func _input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("pause"):
+		get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")

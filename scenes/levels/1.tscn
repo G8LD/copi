@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bk4eq5iihx4tx" path="res://scenes/key.tscn" id="5_i3c8t"]
 [ext_resource type="PackedScene" uid="uid://d4a1v8qxpjqkn" path="res://scenes/door.tscn" id="6_hn15i"]
 [ext_resource type="PackedScene" uid="uid://dd7d3atkh5udn" path="res://scenes/bottom.tscn" id="7_31rim"]
+[ext_resource type="PackedScene" uid="uid://cp5jj73ggepnp" path="res://scenes/ui/pause_menu.tscn" id="8_ijh0y"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u5sy4"]
 load_path = "res://.godot/imported/tileset.png-b50fc1806457686cf91872f682d34a54.ctex"
@@ -161,7 +162,7 @@ _data = {
 &"move": SubResource("Animation_lbhrr")
 }
 
-[node name="Game" type="Node2D" unique_id=179803717]
+[node name="Level1" type="Node2D" unique_id=179803717]
 
 [node name="Player" parent="." unique_id=1154192266 instance=ExtResource("1_8xfph")]
 unique_name_in_owner = true
@@ -201,3 +202,5 @@ position = Vector2(1440, -256)
 [node name="Bottom" parent="." unique_id=839116890 node_paths=PackedStringArray("tilemap") instance=ExtResource("7_31rim")]
 position = Vector2(545, 87)
 tilemap = NodePath("../TileMapLayer")
+
+[node name="PauseMenu" parent="." unique_id=730341835 instance=ExtResource("8_ijh0y")]

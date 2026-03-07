@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c1f2thykmv4wg"]
 
-[ext_resource type="Script" uid="uid://cdnkks2g7qefc" path="res://scripts/level_menu.gd" id="1_jqwib"]
+[ext_resource type="Script" uid="uid://cdnkks2g7qefc" path="res://scripts/ui/level_menu.gd" id="1_jqwib"]
 [ext_resource type="FontFile" uid="uid://ch5v3o24b7jh2" path="res://assets/fonts/PixelOperator8.ttf" id="2_jqwib"]
 
 [node name="LevelMenu" type="Control" unique_id=1191276184]

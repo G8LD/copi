@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://wgqprgx3ntjm"]
+
+[ext_resource type="FontFile" uid="uid://cm6h0mf53wl4a" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_xsssc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekxnf"]
+bg_color = Color(0.96862745, 0.6666667, 0.1882353, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
+bg_color = Color(0.96862745, 0.6666667, 0.1882353, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="MenuButton" type="Button" unique_id=348237539]
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_xsssc")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wu84c")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wu84c")

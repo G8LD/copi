@@ -3,7 +3,7 @@ extends Area2D
 @onready var player: CharacterBody2D = %Player
 @export var tilemap: TileMapLayer
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(_body: Node2D) -> void:
 	var used_rect: Rect2i = tilemap.get_used_rect()
 	var tile_size := tilemap.tile_set.get_tile_size()
 	
