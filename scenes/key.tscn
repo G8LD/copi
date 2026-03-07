@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bk4eq5iihx4tx"]
 
 [ext_resource type="Script" uid="uid://dwfys6ln7u13c" path="res://scripts/key.gd" id="1_fttkb"]
-[ext_resource type="Texture2D" uid="uid://d0ylc788235dv" path="res://assets/sprites/tiles/tile001.png" id="1_yk2u2"]
+[ext_resource type="Texture2D" uid="uid://cnhi2epgak1lv" path="res://assets/sprites/key.png" id="2_fttkb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fttkb"]
 size = Vector2(32, 32)
@@ -14,6 +14,6 @@ script = ExtResource("1_fttkb")
 shape = SubResource("RectangleShape2D_fttkb")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1492267801]
-texture = ExtResource("1_yk2u2")
+texture = ExtResource("2_fttkb")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
