@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://tbvonjwmdepu"]
+
+[ext_resource type="FontFile" uid="uid://cm6h0mf53wl4a" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_i0sit"]
+[ext_resource type="Script" uid="uid://chsp01cd5dho8" path="res://scripts/level_button.gd" id="2_o8246"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rj3wb"]
+bg_color = Color(0.96862745, 0.6666667, 0.1882353, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqwib"]
+bg_color = Color(0.96862745, 0.6666667, 0.1882353, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="LevelButton" type="Button" unique_id=1438702422]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_i0sit")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_rj3wb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jqwib")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jqwib")
+script = ExtResource("2_o8246")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

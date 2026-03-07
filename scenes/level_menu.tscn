@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://c1f2thykmv4wg"]
+
+[ext_resource type="Script" uid="uid://cdnkks2g7qefc" path="res://scripts/level_menu.gd" id="1_jqwib"]
+[ext_resource type="FontFile" uid="uid://ch5v3o24b7jh2" path="res://assets/fonts/PixelOperator8.ttf" id="2_jqwib"]
+
+[node name="LevelMenu" type="Control" unique_id=1191276184]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jqwib")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=789375605]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.95686275, 0.91764706, 0.36078432, 1)
+
+[node name="Title" type="Label" parent="." unique_id=1881143910]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -394.0
+offset_top = 69.0
+offset_right = 394.0
+offset_bottom = 220.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0.96862745, 0.6666667, 0.1882353, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("2_jqwib")
+theme_override_font_sizes/font_size = 150
+text = "LEVELS"
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=423710870]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -616.0
+offset_top = -208.0
+offset_right = 616.5
+offset_bottom = 278.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 50
+theme_override_constants/v_separation = 50
+columns = 4
