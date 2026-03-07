@@ -2,13 +2,20 @@ extends CanvasLayer
 
 
 @onready var options_label: Label = $options_label
+@onready var v_box_container: VBoxContainer = $VBoxContainer
+@onready var quit: Button = $VBoxContainer/Quit
+
+
+func _ready() -> void:
+	_unpause()
+	if OS.get_name() == "Web":
+		v_box_container.remove_child(quit)
+	v_box_container.size.y = v_box_container.get_child_count() * 75
+
 
 func _unpause() -> void:
 	visible = false
 	get_tree().paused = false
-
-func _ready() -> void:
-	_unpause()
 
 
 func _input(_event: InputEvent) -> void:
