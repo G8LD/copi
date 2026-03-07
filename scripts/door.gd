@@ -9,4 +9,4 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-	player.quit()
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
