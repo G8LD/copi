@@ -3,16 +3,27 @@
 [ext_resource type="Texture2D" uid="uid://cjc1gxphcj8lk" path="res://assets/sprites/objects/door.png" id="1_hpvv5"]
 [ext_resource type="Script" uid="uid://bm0a3jmpbfhx4" path="res://scripts/objects/door.gd" id="1_uvdjg"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uvdjg"]
-atlas = ExtResource("1_hpvv5")
-region = Rect2(0, 0, 32, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_83dcw"]
 atlas = ExtResource("1_hpvv5")
 region = Rect2(32, 0, 32, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvdjg"]
+atlas = ExtResource("1_hpvv5")
+region = Rect2(0, 0, 32, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_la1wf"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83dcw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvdjg")
+}],
+"loop": false,
+"name": &"close",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_uvdjg")
@@ -21,7 +32,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_83dcw")
 }],
 "loop": false,
-"name": &"default",
+"name": &"open",
 "speed": 5.0
 }]
 
@@ -34,6 +45,7 @@ script = ExtResource("1_uvdjg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1600755297]
 sprite_frames = SubResource("SpriteFrames_la1wf")
+animation = &"close"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=403630749]
 shape = SubResource("RectangleShape2D_18pbm")

@@ -17,12 +17,13 @@ func init_level_buttons():
 
 	var file_name = dir.get_next()
 	while file_name != "":
-		var level = int(file_name.remove_chars(".tscn"))
-
-		var level_button = LEVEL_BUTTON.instantiate()
-		level_button.level = level
-		grid_container.add_child(level_button)
-		nb_levels+=1
+		var regex = RegEx.create_from_string("^level_(\\d+).tscn$")
+		var level = regex.search(file_name)
+		if level:
+			var level_button = LEVEL_BUTTON.instantiate()
+			level_button.level = int(level.get_string())
+			grid_container.add_child(level_button)
+			nb_levels+=1
 
 		file_name = dir.get_next()
 

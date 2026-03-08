@@ -10,5 +10,12 @@ func _on_body_entered(_body: Node2D) -> void:
 
 func open() -> void:
 	if !is_open and !animated_sprite_2d.is_playing():
+		animated_sprite_2d.animation = "open"
 		animated_sprite_2d.play()
 		is_open = true
+
+func close() -> void:
+	if is_open and !animated_sprite_2d.is_playing():
+		animated_sprite_2d.animation = "close"
+		animated_sprite_2d.play()
+		is_open = false
