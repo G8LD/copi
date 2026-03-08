@@ -44,3 +44,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	if direction and velocity.y >= 0.0:
 		auto_climb.disabled = ray_cast_2d_top.is_colliding() or not ray_cast_2d_bottom.is_colliding()
+
+func quit() -> void:
+	player.visible = false
+	process_mode = Node.PROCESS_MODE_DISABLED
