@@ -3,6 +3,11 @@ extends CharacterBody2D
 @onready var player: CharacterBody2D = $"."
 @onready var tile_map_layer: TileMapLayer = $"../TileMapLayer"
 
+@onready var auto_climb: CollisionShape2D = $AutoClimb
+@onready var ray_cast_2d_top: RayCast2D = $StepDetector/RayCast2DTop
+@onready var ray_cast_2d_bottom: RayCast2D = $StepDetector/RayCast2DBottom
+@onready var step_detector: Node2D = $StepDetector
+
 
 const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
@@ -25,13 +30,17 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		auto_climb.disabled  = true
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * SPEED
+		step_detector.scale.x = sign(velocity.x) 
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	if direction and velocity.y >= 0.0:
+		auto_climb.disabled = ray_cast_2d_top.is_colliding() or not ray_cast_2d_bottom.is_colliding()

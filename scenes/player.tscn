@@ -4,16 +4,34 @@
 [ext_resource type="Texture2D" uid="uid://bel1nkku0hiku" path="res://assets/sprites/character.png" id="2_g2els"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4flbx"]
-size = Vector2(26, 26)
+size = Vector2(29, 29)
+
+[sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_g2els"]
+length = 6.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1154192266]
 collision_layer = 2
 script = ExtResource("1_3vyb7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1243383878]
-position = Vector2(0, -16)
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("2_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1197515173]
-position = Vector2(0, -13)
 shape = SubResource("RectangleShape2D_4flbx")
+
+[node name="AutoClimb" type="CollisionShape2D" parent="." unique_id=676580889]
+position = Vector2(0, 14)
+shape = SubResource("SeparationRayShape2D_g2els")
+disabled = true
+debug_color = Color(0.79376394, 0.09421901, 0.42734873, 0.41960785)
+
+[node name="StepDetector" type="Node2D" parent="." unique_id=205289922]
+
+[node name="RayCast2DBottom" type="RayCast2D" parent="StepDetector" unique_id=334171960]
+position = Vector2(13, 11)
+target_position = Vector2(12, 0)
+
+[node name="RayCast2DTop" type="RayCast2D" parent="StepDetector" unique_id=52135469]
+position = Vector2(13, -2)
+target_position = Vector2(12, 0)
