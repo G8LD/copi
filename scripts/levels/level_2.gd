@@ -26,9 +26,11 @@ func set_label_color() -> void:
 		if label.get_theme_color("font_shadow_color") != Color():
 			label.add_theme_color_override("font_color", Color("fe3b1e"))
 			label.add_theme_color_override("font_shadow_color", Color())
+			label.add_theme_color_override("font_outline_color", Color())
 	elif label.get_theme_color("font_color") != Color("FFF"):
 		label.add_theme_color_override("font_color", Color("FFF"))
 		label.add_theme_color_override("font_shadow_color", Color("f7aa30"))
+		label.add_theme_color_override("font_outline_color", Color("f7aa30"))
 
 
 func _on_button_body_entered(_body: Node2D) -> void:
@@ -45,4 +47,5 @@ func _on_button_pressed() -> void:
 
 
 func _on_timer_timeout() -> void:
+	label.text = str("%.2f" % timer.time_left)
 	door.close()
