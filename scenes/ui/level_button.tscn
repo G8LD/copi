@@ -12,10 +12,10 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqwib"]
 bg_color = Color(0.96862745, 0.6666667, 0.1882353, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
 border_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
@@ -34,6 +34,8 @@ theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxFlat_rj3wb")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jqwib")
 theme_override_styles/hover = SubResource("StyleBoxFlat_jqwib")
+theme_override_styles/focus = SubResource("StyleBoxFlat_jqwib")
 script = ExtResource("2_o8246")
 
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="." to="." method="_on_pressed"]

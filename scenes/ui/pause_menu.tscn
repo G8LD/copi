@@ -72,6 +72,7 @@ theme_override_font_sizes/font_size = 30
 text = "y a pas d'options poto rend pas fou"
 horizontal_alignment = 1
 
+[connection signal="draw" from="VBoxContainer/Resume" to="." method="_on_resume_draw"]
 [connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="VBoxContainer/Replay" to="." method="_on_replay_pressed"]
 [connection signal="pressed" from="VBoxContainer/Levels" to="." method="_on_levels_pressed"]

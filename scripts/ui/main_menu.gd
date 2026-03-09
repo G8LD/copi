@@ -3,6 +3,7 @@ extends Control
 @onready var options_label: Label = $options_label
 @onready var v_box_container: VBoxContainer = $VBoxContainer
 @onready var quit: Button = $VBoxContainer/Quit
+@onready var start: Button = $VBoxContainer/Start
 
 
 func _ready() -> void:
