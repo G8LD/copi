@@ -49,3 +49,7 @@ func _on_button_pressed() -> void:
 func _on_timer_timeout() -> void:
 	label.text = str("%.2f" % timer.time_left)
 	door.close()
+
+
+func _on_door_body_entered(body: Node2D) -> void:
+	timer.paused = true

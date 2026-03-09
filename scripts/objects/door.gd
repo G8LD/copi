@@ -5,6 +5,10 @@ extends Area2D
 @onready var timer: Timer = $Timer
 @export var is_open: bool = false
 
+func _ready() -> void:
+	animated_sprite_2d.animation = "open"
+
+
 func _on_body_entered(_body: Node2D) -> void:
 	if is_open:
 		timer.start()
