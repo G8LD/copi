@@ -5,7 +5,7 @@ var level: int
 func _ready() -> void:
 	text = str(level)
 	if get_index() == 0: 
-		grab_focus()
+		call_deferred("grab_focus")
 
 
 func _on_pressed() -> void:
@@ -13,4 +13,4 @@ func _on_pressed() -> void:
 
 
 func _on_mouse_entered() -> void:
-	grab_focus()
+	call_deferred("grab_focus")

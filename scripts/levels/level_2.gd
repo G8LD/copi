@@ -51,5 +51,5 @@ func _on_timer_timeout() -> void:
 	door.close()
 
 
-func _on_door_body_entered(body: Node2D) -> void:
+func _on_door_body_entered(_body: Node2D) -> void:
 	timer.paused = true

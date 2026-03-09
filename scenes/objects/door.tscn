@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cjc1gxphcj8lk" path="res://assets/sprites/objects/door.png" id="1_hpvv5"]
 [ext_resource type="Script" uid="uid://bm0a3jmpbfhx4" path="res://scripts/objects/door.gd" id="1_uvdjg"]
+[ext_resource type="PackedScene" uid="uid://c2s7u6g0qjd51" path="res://scenes/ui/win_message.tscn" id="2_xm0wp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_83dcw"]
 atlas = ExtResource("1_hpvv5")
@@ -43,6 +44,8 @@ size = Vector2(32, 64)
 collision_mask = 2
 script = ExtResource("1_uvdjg")
 
+[node name="WinMessage" parent="." unique_id=1944867965 instance=ExtResource("2_xm0wp")]
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1600755297]
 sprite_frames = SubResource("SpriteFrames_la1wf")
 animation = &"close"
@@ -50,9 +53,5 @@ animation = &"close"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=403630749]
 shape = SubResource("RectangleShape2D_18pbm")
 
-[node name="Timer" type="Timer" parent="." unique_id=556480801]
-one_shot = true
-
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

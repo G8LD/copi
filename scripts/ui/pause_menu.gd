@@ -4,7 +4,7 @@ extends CanvasLayer
 @onready var options_label: Label = $options_label
 @onready var v_box_container: VBoxContainer = $VBoxContainer
 @onready var quit: Button = $VBoxContainer/Quit
-
+var is_paused = true # Local variable to know if this is the node that paused the tree
 
 func _ready() -> void:
 	_unpause()
@@ -16,12 +16,19 @@ func _ready() -> void:
 func _unpause() -> void:
 	visible = false
 	get_tree().paused = false
+	is_paused = false
 
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("pause"):
-		visible = !get_tree().paused
-		get_tree().paused = !get_tree().paused
+		# Check if tree paused and unpause only if is_paused is true
+		if get_tree().paused:
+			if is_paused:
+				_unpause()
+		else:
+			visible = true
+			get_tree().paused = true
+			is_paused = true
 
 
 func _on_resume_pressed() -> void:
