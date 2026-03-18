@@ -125,6 +125,7 @@ sources/0 = SubResource("TileSetAtlasSource_gee14")
 [node name="Game" type="Node2D" unique_id=179803717]
 
 [node name="PauseMenu" parent="." unique_id=730341835 instance=ExtResource("1_770am")]
+visible = false
 
 [node name="Player" parent="." unique_id=1154192266 instance=ExtResource("1_uwrxv")]
 unique_name_in_owner = true

@@ -4,9 +4,6 @@ extends Area2D
 
 var pressed = false
 
-func _ready() -> void:
-	pass
-
 func _on_body_entered(_body: Node2D) -> void:
 	if !pressed and !animated_sprite_2d.is_playing():
 		pressed = true

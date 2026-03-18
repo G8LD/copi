@@ -1,3 +1,9 @@
+"""
+Level Mechanic:
+	Door is closed
+	Need to go on moving platform and jump on button
+	Fall to respawn at the top of the screen and end on moving platform
+"""
 extends Node2D
 
 @onready var button: Area2D = $Button

@@ -14,6 +14,7 @@ func _ready() -> void:
 
 func _on_body_entered(_body: Node2D) -> void:
 	if is_open:
+		win_message.visible = true
 		player.visible = false
 		get_tree().paused = true
 		win_label_animation_player.play("slide")

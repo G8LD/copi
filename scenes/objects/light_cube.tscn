@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://ds4k425gai6d0"]
+
+[ext_resource type="Texture2D" uid="uid://dddnccado0xpo" path="res://assets/sprites/objects/light_cube.png" id="1_i38rr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ji3o"]
+atlas = ExtResource("1_i38rr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5q6j"]
+atlas = ExtResource("1_i38rr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grme1"]
+atlas = ExtResource("1_i38rr")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_grme1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ji3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5q6j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grme1")
+}],
+"loop": false,
+"name": &"blink",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ji3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5q6j")
+}],
+"loop": false,
+"name": &"light_up",
+"speed": 3.0
+}]
+
+[node name="LightCube" type="AnimatedSprite2D" unique_id=1996734471]
+sprite_frames = SubResource("SpriteFrames_grme1")
+animation = &"blink"

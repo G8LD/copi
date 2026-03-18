@@ -4,7 +4,7 @@ const LEVEL_BUTTON = preload("res://scenes/ui/level_button.tscn")
 
 @onready var grid_container: GridContainer = $GridContainer
 
-var nb_levels = 2
+var nb_levels = 3
 
 func _ready() -> void:
 	init_level_buttons()

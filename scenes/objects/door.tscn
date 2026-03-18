@@ -45,6 +45,7 @@ collision_mask = 2
 script = ExtResource("1_uvdjg")
 
 [node name="WinMessage" parent="." unique_id=1944867965 instance=ExtResource("2_xm0wp")]
+visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1600755297]
 sprite_frames = SubResource("SpriteFrames_la1wf")

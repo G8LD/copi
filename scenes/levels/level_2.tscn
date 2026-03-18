@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d4a1v8qxpjqkn" path="res://scenes/objects/door.tscn" id="4_ne2mo"]
 [ext_resource type="PackedScene" uid="uid://dd7d3atkh5udn" path="res://scenes/bottom.tscn" id="5_6cvei"]
 [ext_resource type="PackedScene" uid="uid://b2eiydkjo82ro" path="res://scenes/objects/button.tscn" id="6_qpwj6"]
-[ext_resource type="FontFile" uid="uid://ch5v3o24b7jh2" path="res://assets/fonts/PixelOperator8.ttf" id="9_3p04p"]
+[ext_resource type="PackedScene" uid="uid://co2nkcbhkeepr" path="res://scenes/objects/labeled_timer.tscn" id="9_3p04p"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u5sy4"]
 load_path = "res://.godot/imported/tileset.png-b50fc1806457686cf91872f682d34a54.ctex"
@@ -125,10 +125,11 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_gee14")
 
-[node name="Game" type="Node2D" unique_id=179803717]
+[node name="Level2" type="Node2D" unique_id=179803717]
 script = ExtResource("1_8qukl")
 
 [node name="PauseMenu" parent="." unique_id=730341835 instance=ExtResource("1_ibugp")]
+visible = false
 
 [node name="Player" parent="." unique_id=1154192266 instance=ExtResource("1_b4j7a")]
 unique_name_in_owner = true
@@ -162,29 +163,6 @@ tilemap = NodePath("../TileMapLayer")
 [node name="Button" parent="." unique_id=1535824575 instance=ExtResource("6_qpwj6")]
 position = Vector2(496, 16)
 
-[node name="Timer" type="Timer" parent="." unique_id=1900137860]
-wait_time = 30.0
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1460984412]
-layer = 0
-
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=782549131]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -131.0
-offset_top = 58.0
-offset_right = 132.0
-offset_bottom = 209.0
-grow_horizontal = 2
-theme_override_colors/font_shadow_color = Color(0.96862745, 0.6666667, 0.1882353, 1)
-theme_override_colors/font_outline_color = Color(0.96862745, 0.6666667, 0.1882353, 1)
-theme_override_constants/shadow_offset_x = 10
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("9_3p04p")
-theme_override_font_sizes/font_size = 150
-text = "30.00"
+[node name="LabeledTimer" parent="." unique_id=1984718897 instance=ExtResource("9_3p04p")]
 
 [connection signal="body_entered" from="Door" to="." method="_on_door_body_entered"]
-[connection signal="body_entered" from="Button" to="." method="_on_button_body_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

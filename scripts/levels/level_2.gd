@@ -1,15 +1,27 @@
 extends Node2D
 
 @onready var door: Area2D = $Door
-@onready var timer: Timer = $Timer
+"""
+Level Mechanic:
+	Button to open door and start timer
+	Door closes at end of timer
+	Need to reach the door before the timer stops
+	Need to press button to restart timer
+"""
 @onready var button: Area2D = $Button
-@onready var label: Label = $CanvasLayer/Label
 var buttonAnimation: AnimatedSprite2D
 
+@onready var labeled_timer: CanvasLayer = $LabeledTimer
+var timer: Timer
+var label: Label
 
 func _ready() -> void:
+	timer = labeled_timer.get_node("Timer")
 	timer.one_shot = true
 	timer.wait_time = 30
+	timer.timeout.connect(_on_timer_timeout)
+	label = labeled_timer.get_node("Label")
+	label.text = "30.00"
 	buttonAnimation = button.get_node("AnimatedSprite2D")
 	buttonAnimation.animation = "loop"
 	buttonAnimation.animation_finished.connect(_on_button_pressed)
@@ -31,13 +43,6 @@ func set_label_color() -> void:
 		label.add_theme_color_override("font_color", Color("FFF"))
 		label.add_theme_color_override("font_shadow_color", Color("f7aa30"))
 		label.add_theme_color_override("font_outline_color", Color("f7aa30"))
-
-
-func _on_button_body_entered(_body: Node2D) -> void:
-	if !button.pressed and !buttonAnimation.is_playing():
-		button.pressed = true
-		timer.start()
-		buttonAnimation.play()
 
 
 func _on_button_pressed() -> void:
