@@ -1,7 +1,6 @@
 extends CanvasLayer
 
 
-@onready var options_label: Label = $options_label
 @onready var v_box_container: VBoxContainer = $VBoxContainer
 @onready var quit: Button = $VBoxContainer/Quit
 var is_paused = true # Local variable to know if this is the node that paused the tree
@@ -42,10 +41,6 @@ func _on_replay_pressed() -> void:
 func _on_levels_pressed() -> void:
 	_unpause()
 	get_tree().change_scene_to_file("res://scenes/ui/level_menu.tscn")
-
-
-func _on_options_pressed() -> void:
-	options_label.visible = !options_label.visible
 
 
 func _on_quit_pressed() -> void:

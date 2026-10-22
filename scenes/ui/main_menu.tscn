@@ -61,36 +61,9 @@ theme_override_constants/separation = 9
 layout_mode = 2
 text = "Start"
 
-[node name="Options" parent="VBoxContainer" unique_id=2079876490 instance=ExtResource("3_bqqt6")]
-layout_mode = 2
-text = "Options"
-
 [node name="Quit" parent="VBoxContainer" unique_id=274029334 instance=ExtResource("3_bqqt6")]
 layout_mode = 2
 text = "Quit"
 
-[node name="options_label" type="Label" parent="." unique_id=611162486]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -433.5
-offset_top = -215.0
-offset_right = 433.5
-offset_bottom = -178.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_shadow_color = Color(0.96862745, 0.6666667, 0.1882353, 1)
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 1
-theme_override_fonts/font = ExtResource("2_ekxnf")
-theme_override_font_sizes/font_size = 30
-text = "y a pas d'options poto rend pas fou"
-horizontal_alignment = 1
-
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

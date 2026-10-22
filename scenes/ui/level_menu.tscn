@@ -56,4 +56,4 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 50
 theme_override_constants/v_separation = 50
-columns = 4
+columns = 2
